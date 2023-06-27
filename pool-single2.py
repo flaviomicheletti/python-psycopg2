@@ -1,4 +1,4 @@
-import psycopg2
+import config
 from psycopg2 import pool
 
 
@@ -43,11 +43,11 @@ max_connections = 5
 database = Database(
     min_connections=min_connections,
     max_connections=max_connections,
-    host='your_host',
-    port='your_port',
-    dbname='your_database',
-    user='your_username',
-    password='your_password'
+    host=config.host,
+    port=config.port,
+    database=config.database,
+    user=config.user,
+    password=config.password
 )
 
 # Create an instance of the application with the database

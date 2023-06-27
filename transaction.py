@@ -1,12 +1,13 @@
 import psycopg2
+import config
 
 # Establish a connection to the PostgreSQL database
 conn = psycopg2.connect(
-    dbname="your_database_name",
-    user="your_username",
-    password="your_password",
-    host="your_host",
-    port="your_port"
+    host=config.host,
+    port=config.port,
+    database=config.database,
+    user=config.user,
+    password=config.password
 )
 
 try:
